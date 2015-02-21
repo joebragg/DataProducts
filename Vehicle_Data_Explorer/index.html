@@ -43,14 +43,17 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Vehicle Data Plots</h2>
+    <h2>Vehicle Data</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <ul>
+<li>Are you deciding on what new vehicle to purchase?</li>
+<li>Do you want to know more about how your current vehicle compares to others?</li>
+<li>Purchase price is only part of the Total Cost of Ownership. What about fuel cost which could be 50% or more of the purchase price over the life of the vehicle?</li>
+<li>What is your vehicle&#39;s carbon footprint?</li>
+</ul>
+
+<h3><a href="https://joebragg.shinyapps.io/DataProduct/">Vehicle Data Explorer</a> can help answer these questions.</h3>
 
   </article>
   <!-- Presenter Notes -->
@@ -58,30 +61,56 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Fuel Consuption &amp; Carbon Foot Print</h2>
+    <h2>Screen Shot</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><img src="figures/Capture1.PNG" alt="Screen Capture"></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Sample Plots</h2>
+    <h2>The Data</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>The data for the Vehicle Data Explorer comes from the U.S. Department of Energy website <a href="http://www.fueleconomy.gov/">fueleconomy.gov</a>. It includes vehicle data from 1984 to 2016.</p>
+
+<pre><code class="r">vehicle.data&lt;-read.csv(&quot;../data/vehicles.csv&quot;)
+numMM&lt;-length(unique(paste(vehicle.data$make,vehicle.data$model)))
+numMM
+</code></pre>
+
+<p>[1] 3436</p>
+
+<pre><code class="r">numYMM&lt;-length(unique(paste(vehicle.data$year,vehicle.data$make,vehicle.data$model)))
+numYMM
+</code></pre>
+
+<p>[1] 15553</p>
+
+<p>This data includes 3436 makes &amp; models across 32 years for a total of 15553 vehicles.</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Future Updates</h2>
+    <h2>Future Development</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>This <a href="http://shiny.rstudio.com/">Shiny</a> web application is a work in progress. You are welcome to fork the <a href="https://github.com/joebragg/DataProducts.git">Github repository</a> and contribute to its development. Here are a few ideas for your consideration.</p>
+
+<ul>
+<li>Add a selection of visualizations to assist with exploration of the data including bar charts, bubble charts, box plots, etc.</li>
+<li>Incorporate additional data sets such as safety ratings, recall information, consumer ratings and Total Cost of Ownership</li>
+<li>Data collection on the types of data and visualizations that consumers use the most on the site</li>
+</ul>
+
+<h3>Informed consumers are key to future progress and a better World!!!</h3>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -92,25 +121,25 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Vehicle Data Plots'>
+        data-slide=1 title='Vehicle Data'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Fuel Consuption &amp; Carbon Foot Print'>
+        data-slide=2 title='Screen Shot'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Sample Plots'>
+        data-slide=3 title='The Data'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Future Updates'>
+        data-slide=4 title='Future Development'>
          4
       </a>
     </li>
