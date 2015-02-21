@@ -12,7 +12,7 @@ knit        : slidify::knit2slides
 css         : custom.css
 ---
 
-## Vehicle Data
+## Introduction
 
 * Are you deciding on what new vehicle to purchase?
 * Do you want to know more about how your current vehicle compares to others?
